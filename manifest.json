@@ -1,0 +1,46 @@
+{
+  "name": "ThermoData — Prospection artisans RGE",
+  "short_name": "ThermoData",
+  "description": "Plans de prospection porte-à-porte pour artisans RGE basés sur les données DPE ADEME. Adresses certifiées BAN, score commercial, tournée GPS optimisée.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0B1A2F",
+  "theme_color": "#0B1A2F",
+  "lang": "fr-FR",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Accéder à l'interface",
+      "short_name": "Interface",
+      "description": "Générer un plan de prospection",
+      "url": "https://thermodata.streamlit.app/"
+    },
+    {
+      "name": "Tarifs",
+      "short_name": "Tarifs",
+      "url": "/#pricing"
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "url": "/#contact"
+    }
+  ]
+}

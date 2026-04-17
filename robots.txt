@@ -1,0 +1,47 @@
+# robots.txt — ThermoData
+# https://thermodata.fr/
+
+User-agent: *
+Allow: /
+Disallow: /assets/*.pdf$
+Disallow: /*?*utm_
+Disallow: /*?*fbclid
+Disallow: /*?*gclid
+
+# Bots IA — à ajuster selon politique (bloquer ou autoriser)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Bots malveillants ou inutiles
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap
+Sitemap: https://thermodata.fr/sitemap.xml
+
+# Host canonical
+Host: https://thermodata.fr
