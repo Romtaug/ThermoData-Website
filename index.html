@@ -427,16 +427,83 @@ button{font-family:inherit;cursor:pointer;border:none;}
 .hero-proof{display:flex;gap:2rem;flex-wrap:wrap;}
 .hero-proof-item{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.45);font-size:.82rem;font-weight:500;}
 .hero-proof-item svg{width:16px;height:16px;color:var(--green-light);flex-shrink:0;}
-.hero-visual{position:relative;}
-.hero-logo-wrap{position:relative;display:flex;justify-content:center;align-items:center;}
-.hero-logo-wrap img{width:clamp(240px,20vw,360px);filter:drop-shadow(0 20px 60px rgba(230,126,34,.2));animation:float 6s ease-in-out infinite;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
-.hero-floating-card{position:absolute;background:rgba(255,255,255,.07);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1rem 1.25rem;box-shadow:0 8px 32px rgba(0,0,0,.2);}
-.hero-floating-card .label{font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:.25rem;}
-.hero-floating-card .value{font-family:var(--font-display);font-size:1.4rem;color:var(--white);}
-.hero-floating-card .accent{color:var(--orange-light);}
-.card-score{top:10%;right:-5%;animation:float 5s 1s ease-in-out infinite;}
-.card-addresses{bottom:15%;left:-8%;animation:float 7s .5s ease-in-out infinite;}
+
+
+.hero-visual{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:320px;
+}
+
+.hero-logo-wrap{
+  position:relative;
+  width:min(100%, 420px);
+  aspect-ratio:1 / 1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-inline:auto;
+}
+
+.hero-logo-wrap img{
+  width:clamp(180px, 42vw, 340px);
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 20px 60px rgba(230,126,34,.2));
+  animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+
+.hero-floating-card{
+  position:absolute;
+  max-width:160px;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  padding:.85rem 1rem;
+  box-shadow:0 8px 32px rgba(0,0,0,.2);
+}
+
+.hero-floating-card .label{
+  font-size:.65rem;
+  color:rgba(255,255,255,.4);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:600;
+  margin-bottom:.25rem;
+}
+
+.hero-floating-card .value{
+  font-family:var(--font-display);
+  font-size:1.2rem;
+  color:var(--white);
+}
+
+.hero-floating-card .accent{
+  color:var(--orange-light);
+}
+
+.card-score{
+  top:12%;
+  right:0;
+  transform:translateX(10%);
+  animation:float 5s 1s ease-in-out infinite;
+}
+
+.card-addresses{
+  bottom:14%;
+  left:0;
+  transform:translateX(-10%);
+  animation:float 7s .5s ease-in-out infinite;
+}
 
 .kpi-strip{background:var(--white);border-top:3px solid var(--orange);border-bottom:1px solid var(--gray-200);padding:2.5rem 0;position:relative;z-index:3;}
 .kpi-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem;}
@@ -575,23 +642,81 @@ button{font-family:inherit;cursor:pointer;border:none;}
 /* Hidden SEO content (readable by crawlers, not cluttering the page) */
 .seo-text{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
 
-  @media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;text-align:center;}
-  .hero-sub{margin-left:auto;margin-right:auto;}
-  .hero-actions{justify-content:center;}
-  .hero-proof{justify-content:center;}
-  .hero-visual{order:-1;margin-bottom:1rem;}
-  .hero-logo-wrap img{width:200px;}
-  .hero-floating-card{display:none;}
+@media (max-width:1024px){
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:2.5rem;
+  }
+
+  .hero-sub{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions,
+  .hero-proof{
+    justify-content:center;
+  }
+
+  .hero-visual{
+    order:-1;
+    min-height:260px;
+    margin-bottom:.5rem;
+  }
+
+  .hero-logo-wrap{
+    width:min(100%, 320px);
+  }
+
+  .hero-logo-wrap img{
+    width:clamp(160px, 34vw, 260px);
+  }
+
+  .hero-floating-card{
+    display:none;
+  }
+
   .features-grid{grid-template-columns:repeat(2,1fr);}
   .pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto;}
   .kpi-grid{grid-template-columns:repeat(3,1fr);}
   .timeline-row{grid-template-columns:1fr;}
 }
-@media(max-width:768px){
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(11,26,47,.98);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem;gap:1rem;border-bottom:1px solid rgba(255,255,255,.1);}
+
+@media (max-width:768px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:rgba(11,26,47,.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    padding:1.5rem;
+    gap:1rem;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+
   .nav-links.open{display:flex;}
   .nav-toggle{display:flex;}
+
+  .hero-content{
+    padding:7rem 0 4rem;
+  }
+
+  .hero-visual{
+    min-height:220px;
+  }
+
+  .hero-logo-wrap{
+    width:min(100%, 260px);
+  }
+
+  .hero-logo-wrap img{
+    width:min(68vw, 220px);
+  }
+
   .features-grid{grid-template-columns:1fr;}
   .kpi-grid{grid-template-columns:repeat(2,1fr);}
   .hero h1{font-size:2.2rem;}
@@ -648,7 +773,7 @@ button{font-family:inherit;cursor:pointer;border:none;}
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-logo-wrap">
-          <img src="assets/logo.png" alt="" width="380" height="380" fetchpriority="high">
+          <img src="assets/logo.png" alt="" width="320" height="320" fetchpriority="high">
           <div class="hero-floating-card card-score"><div class="label">Score prospect</div><div class="value"><span class="accent">87</span>/100</div></div>
           <div class="hero-floating-card card-addresses"><div class="label">Adresses trouvées</div><div class="value">+<span class="accent">4.8M</span></div></div>
         </div>
